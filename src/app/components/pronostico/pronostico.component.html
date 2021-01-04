@@ -1,0 +1,28 @@
+<div class="row">
+    <h2>Weather in <strong>{{pronosticoCiudadPrincipal[0].country}}</strong></h2>
+    <ul *ngFor="let pronostico of pronosticoCiudadPrincipal" class="weather-card col-2">
+        <li><u>City</u>: <em>{{pronostico.city}}</em></li>
+        <li><u>Date</u>: <em>{{pronostico.date}}</em></li>
+        <li><u>Thermal sensation</u>: <em>{{pronostico.feelTemp}}</em></li>
+        <li><u>Temperature</u>: <em>{{pronostico.temp}}</em></li>
+        <li><u>Maximum temperature</u>: <em>{{pronostico.maxTemp}}</em></li>
+        <li><u>Minimum temperature</u>: <em>{{pronostico.minTemp}}</em></li>
+        <li><u>Weathercast</u>: <span><em>{{pronostico.weather}}</em></span></li>
+    </ul>
+</div>
+<hr>
+<div class="row">
+    <div class="col-1"></div>
+        <ul *ngFor="let pronostico of pronosticoCiudadSecundaria; let i = index" class="weather-card col-2">
+            <h2 (click)="setPrimary(this.pronostico.country, i); $event.stopPropagation()"><button><strong>{{pronostico.country}}</strong></button></h2>
+            <li><u>City</u>: <em>{{pronostico.city}}</em></li>
+            <li><u>Date</u>: <em>{{pronostico.date}}</em></li>
+            <li><u>Thermal sensation</u>: <em>{{pronostico.feelTemp}}</em></li>
+            <li><u>Temperature</u>: <em>{{pronostico.temp}}</em></li>
+            <li><u>Maximum temperature</u>: <em>{{pronostico.maxTemp}}</em></li>
+            <li><u>Minimum temperature</u>: <em>{{pronostico.minTemp}}</em></li>
+            <li><u>Weathercast</u>:  <span><em>{{pronostico.weather}}</em></span></li>
+        </ul>
+    <div class="col-1"></div>
+</div>
+<hr>
